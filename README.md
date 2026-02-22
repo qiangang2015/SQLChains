@@ -8,9 +8,13 @@ This repository contains the executable prototype ofSQLChains, the corresponding
 The prototype requires the following fixed directory structure (already configured in the provided ZIP package). Do NOT modify the structure to ensure successful execution:
 
 SQLChains-VLDB/
+
 ├── SQLChains.jar       # Executable prototype (JDK8 compiled)
+
 ├── chains.db           # 1GB dataset/metadata file
+
 ├── lib/                # Dependencies (no action required)
+
 └── README.md           # This documentation
 
 ## Environment Requirements
@@ -31,15 +35,15 @@ Run the program from the extracted directory. Use the commands below for your OS
 
 #### Windows
 
-# Open Command Prompt
-cd D:\SQLChains-VLDB
-java -Xmx4g -Xms2g -jar SQLChains.jar
+#### Open Command Prompt
+      cd D:\SQLChains-VLDB
+      java -Xmx4g -Xms2g -jar SQLChains.jar
 
 #### Alternative: Copy chains.db to Current Directory
 
 If you prefer not to navigate to the extracted directory, copy`chains.db` to your current working directory and run:
 
-java -Xmx4g -Xms2g -jar /path/to/SQLChains-VLDB/SQLChains.jar
+      java -Xmx4g -Xms2g -jar /path/to/SQLChains-VLDB/SQLChains.jar
 
 ### Step 3: Verify Execution
 
