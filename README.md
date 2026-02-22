@@ -92,27 +92,27 @@ Execute a full or sub query chain and output execution cost for key steps. This 
 
 #### Usage Examples
 
-# Execute the full tpc-c1 chain
-CFP> exec tpc-c1
+#### Execute the full tpc-c1 chain
+      exec tpc-c1
 
-# Execute the tpc-c1 sub-chain ending at q8
-> exec tpc-c1.q8
+#### Execute the tpc-c1 sub-chain ending at q8
+      exec tpc-c1.q8
 
-# Execute tpc-c1 on 3x scale dataset with pipeline execution
-> exec tpc-c1 --size=3 --pipe
+#### Execute tpc-c1 on 3x scale dataset with pipeline execution
+      exec tpc-c1 --size=3 --pipe
 
-# Execute tpc-c1 and output top 5 results
-> exec tpc-c1 --limit=5
+#### Execute tpc-c1 and output top 20 results
+      exec tpc-c1 --limit=20
 
 #### Optional Parameters
 
-- - `--pipe`: Enable pipeline execution (run queries sequentially without waiting, reduce total time)
+- `--pipe`: Enable pipeline execution
 
-- - `--size=N`: Execute on Nx scale dataset (default: 1)
+- `--size=N`: Execute on Nx scale dataset (default: 1)
 
-- - `--nosort`: Execute without sorting (faster execution)
+- `--nosort`: Execute without sorting
 
-- - `--limit=N`: Output top N results (default: 10)
+- `--limit=N`: Output top N results (default: 10)
 
 ## Experimental Notes
 
