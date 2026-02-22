@@ -51,25 +51,16 @@ Type `help` to view all supported commands (detailed below).
 
 ## 5. Core Commands
 
-All commands are case-insensitive. Use the examples below to reproduce our experimental results.
+All commands are case-insensitive. You can use `list` to view query chain definitions or output the full SQL statements, and `exec` to execute a query chain or subchain. Execution supports both **step-by-step** mode and **pipelined** mode.
 
-### 1. list [chain_name] [options]
+### 5.1 list [chain_name] [options]
 
-List query chain details or SQL statements for specified chains. Use this command to inspect the SQL before execution.
+List query chain details or SQL statements for specified chains. Usage examples are provided below.
 
-#### Usage Examples
-
-#### List all query chains
-      list
-
-#### List each query in the tpc-c1 chain
-      list tpc-c1
-
-#### List each query in the tpc-c1-v1 variant chain
-      list tpc-c1-v1
-
-#### List full nested SQL of tpc-c1 (ending at q14)
-      list tpc-c1.q14
+      list             #List all query chains
+      list tpc-c1      #List each query in the tpc-c1 chain
+      list tpc-c1-v1   #List each query in the tpc-c1-v1 variant chain
+      list tpc-c1.q14  #List full nested SQL of tpc-c1 (ending at q14)
 
 #### Optional Parameters
 
@@ -81,23 +72,14 @@ List query chain details or SQL statements for specified chains. Use this comman
 
 - `--cte`: Output SQL in CTE format (default: nested SQL for better performance)
 
-### 2. exec chain_name [options]
+### 5.2 exec chain_name [options]
 
-Execute a full or sub query chain and output execution cost for key steps. This is the core command for reproducing our experimental results.
+Execute a full or sub query chain and output execution cost for key steps. Usage examples are provided below.
 
-#### Usage Examples
-
-#### Execute the full tpc-c1 chain
-      exec tpc-c1
-
-#### Execute the tpc-c1 sub-chain ending at q8
-      exec tpc-c1.q8
-
-#### Execute tpc-c1 on 3x scale dataset with pipeline execution
-      exec tpc-c1 --size=3 --pipe
-
-#### Execute tpc-c1 and output top 20 results
-      exec tpc-c1 --limit=20
+      exec tpc-c1                      #Execute the full tpc-c1 chain
+      exec tpc-c1.q8                   #Execute the tpc-c1 sub-chain ending at q8
+      exec tpc-c1 --size=3 --pipe      #Execute tpc-c1 on 3x scale dataset with pipeline execution
+      exec tpc-c1 --limit=20           #Execute tpc-c1 and output top 20 results
 
 #### Optional Parameters
 
@@ -109,7 +91,7 @@ Execute a full or sub query chain and output execution cost for key steps. This 
 
 - `--limit=N`: Output top N results (default: 10)
 
-## Experimental Notes
+## 6. Experimental Notes
 
 ### SQL Format Selection
 
