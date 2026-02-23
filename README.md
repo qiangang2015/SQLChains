@@ -105,6 +105,48 @@ The prototype includes 13 preloaded query chains, covering 6 TPC-C benchmarks an
 
 - - Variant chains: tpc-c1.v1, tpc-c2.v1, tpc-c3.v1, tpc-c4.v1, tpc-c5.v1, tpc-c6.v1, tpc-c6.v2
 
+
+## Reproducibility
+
+To fully reproduce the experimental results in our paper, follow the steps below.
+
+### Prerequisites
+
+Before running the experiments, install the following:
+- **DuckDB**       — Our experiments were conducted on Windows 11 using **DuckDB 1.2**
+- **ClickHouse**   — We used the official Docker image of **ClickHouse 24.8** on Windows 11
+> The experiments in this paper were performed on **Windows 11** with the specific versions noted above. Other versions may work but have not been tested.
+
+### Obtaining SQL Statements for DuckDB and ClickHouse
+
+Use `list` in SQLChains to generate SQL for DuckDB and ClickHouse, e.g., `list tpc-c1.v14`. For ClickHouse, the `--ClickHouse` parameter is only needed for S-C1 queries; other queries do not require it.
+
+SQLChains can output SQL in either **nested** or **CTE** format. In our experiments, we observed that **nested SQL performs better** than CTE on both DuckDB and ClickHouse. Therefore, all experiments in this paper use the **nested SQL** format.
+
+### Execution and Measurement
+
+1. Execute each query **5 times**.
+2. Take the **median value** as the final execution cost.
+
+> **Note for DuckDB:** During our experiments, we observed that DuckDB's performance may degrade slightly with continuous execution. To ensure fair and consistent measurements, we recommend exiting DuckDB after each query and restarting the process for the next query. 
+
+### Part 1: Run SQLChains Prototype
+
+Follow the steps in the previous sections to launch the SQLChains prototype. Then use the `exec` command with appropriate parameters to execute the specified query chains.
+
+### Part 2: Run Experiments with DuckDB
+
+1. Launch DuckDB and open the dataset:
+   ```sql
+   .open chains.db
+   .timer on
+   PRAGMA threads=1;
+2. Paste the nested SQL obtained from SQLChains and execute.
+
+### Part 3: Run Experiments with ClickHouse
+#### Create Data Tables
+Use DuckDB to export three tables (lineitem, stocks, retail) from chains.db to CSV files, then import them into ClickHouse:
+
 ## Reproducibility
 
 To fully reproduce the experimental results in our paper, follow the three parts below:
