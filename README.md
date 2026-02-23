@@ -7,15 +7,15 @@ This repository contains the executable prototype of SQLChains, the correspondin
 
 The prototype requires the following fixed directory structure (already configured in the provided ZIP package). Do NOT modify the structure to ensure successful execution:
 
-SQLChains-VLDB/
+      SQLChains-VLDB/
 
-├── SQLChains.jar        # Executable prototype (JDK8 compiled)
+      ├── lib/                 # Dependencies (no action required)
 
-├── chains.db            # 1GB dataset/metadata file
+      ├── chains.db            # 1GB dataset/metadata file
 
-├── lib/                 # Dependencies (no action required)
+      ├── README.md            # This documentation
 
-└── README.md            # This documentation
+      └── SQLChains.jar        # Executable prototype (JDK8 compiled)
 
 ## 3. Environment Requirements
 
