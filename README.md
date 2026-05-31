@@ -1,7 +1,7 @@
 # CubeFlows Prototype
 ## 1. Overview
 
-This README provides instructions for running the CubeFlows prototype (`Prototype.rar`), including system setup, execution commands, and the experimental methods used to reproduce the results in the paper.
+This README provides instructions for running the CubeFlows prototype ([`Prototype.rar`](https://github.com/gnqn/CubeFlow/releases/tag/V1.0.0)), including system setup, execution commands, and the experimental methods used to reproduce the results in the paper.
 
 ## 2. Directory Structure
 
