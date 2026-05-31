@@ -104,10 +104,10 @@ public class Command{
         System.out.println("  1. list [chain_name] [options]");
         System.out.println("     - List query chain details/SQL statements");
         System.out.println("     - Usage examples:");
-        System.out.println("       CubeFlow> list                # List all query chains");
-        System.out.println("       CubeFlow> list tpc-c1         # List each query in tpc-c1");
-        System.out.println("       CubeFlow> list tpc-c1-v1      # List each query in tpc-c1-v1 variant");
-        System.out.println("       CubeFlow> list tpc-c1.q14     # List full nested SQL of tpc-c1 (q14 ending)");
+        System.out.println("       CFP> list                # List all query chains");
+        System.out.println("       CFP> list tpc-c1         # List each query in tpc-c1");
+        System.out.println("       CFP> list tpc-c1-v1      # List each query in tpc-c1-v1 variant");
+        System.out.println("       CFP> list tpc-c1.q14     # List full nested SQL of tpc-c1 (q14 ending)");
         System.out.println("     - Optional parameters:");
         System.out.println("       --size=N      # Scale dataset (default: 1, e.g., --size=3 for 3x scale)");
         System.out.println("       --ClickHouse  # Output ClickHouse-compatible SQL (default: DuckDB)");
@@ -116,8 +116,8 @@ public class Command{
         System.out.println("  2. exec chain_name [options]");
         System.out.println("     - Execute full/sub query chain and output execution cost for key steps");
         System.out.println("     - Usage examples:");
-        System.out.println("       CubeFlow> exec tpc-c1         # Execute tpc-c1 chain (step-by-step)");
-        System.out.println("       CubeFlow> exec tpc-c1.q8      # Execute sub-chain of tpc-c1 ending at q8");
+        System.out.println("       CFP> exec tpc-c1         # Execute tpc-c1 chain (step-by-step)");
+        System.out.println("       CFP> exec tpc-c1.q8      # Execute sub-chain of tpc-c1 ending at q8");
         System.out.println("     - Optional parameters:");
         System.out.println("       --pipe        # Pipeline execution");
         System.out.println("       --size=N      # Execute on Nx scale dataset (default: 1)");
