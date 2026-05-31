@@ -182,18 +182,16 @@ SET max_threads=1;
 - **Stocks**: scale 1x and 3x
 - **Online Retail**: scale 1x
 
-## 8. Acknowledgments
 
-We thank the contributors of the following datasets used in this paper:
+## Runtime Screenshots
 
-- **TPC-H**: Transaction Processing Performance Council (TPC)
-- **Online Retail**: UCI Machine Learning Repository
+### Initial Startup of the Prototype
+<img width="862" height="34" alt="image" src="https://github.com/user-attachments/assets/8293c89e-c7c6-4956-8df2-28342343221f" />
 
-The **Stocks** dataset was compiled by the authors.
+### Execute TPC-C2
 
-## 9. Contact
+### Nested SQL Query for TPC-C2
 
-For any issues related to prototype execution or reproducibility, please contact the corresponding author.
 
 
 ## TPC-C1
