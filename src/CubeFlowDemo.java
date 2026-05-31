@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 
 public class CubeFlowDemo {
-    public static String DEMO = "CubeFlow>";
+    public static String DEMO = "CFP>";
     
     public static void main(String[] args){
         System.setProperty("org.slf4j.simpleLogger.defaultLogLevel", "OFF");
